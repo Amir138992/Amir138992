@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background: linear-gradient(to left , orangered , orange);
+            background-position: center;
+            background-size: cover;
+    }
+    .container{
+        width: 360px;
+        height: 400px;
+        margin: 8% auto;
+        background: rgba(0,0,0,0.5) ;
+        border-radius: 25px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0px 0px 5px 5px white;
+    }
+    h3{
+        text-align: center;
+        margin-bottom: 40px;
+        color: #fff;
+    }
+    .container form{
+        width: 280px;
+        position: absolute;
+        top: 100px;
+        left: 40px;
+        transition: 1s;
+    }
+    form input{
+        width: 100%;
+        padding: 10px 5px;
+        margin: 5px 0;
+        border: 0;
+        border-bottom: 1px solid #fff;
+        outline: none;
+        background: transparent;
+        transition: 1s;
+        color: #fff;
+        direction: rtl;
+    }
+    form input:hover{
+        transform: scale(1.1);
+    }
+    button:hover{
+        transform: scale(0.92);
+        font-size: 20px;
+    }
+    ::placeholder{
+        color: #fff;
+    }
+    .btn{
+        width: 100%;
+        margin: 30px auto;
+        text-align: center;
+    }
+    form button{
+        width: 110px;
+        height: 35px;
+        margin: 0 10px;
+        background: linear-gradient(to right , #ff1 , #ffa);                
+        border: 0;
+        border-radius: 30px;
+        outline: none;
+        transition: 1s;
+        color: #333;
+        cursor: pointer;
+        font-size:18px; 
+    }
+    #form2{
+        left: 450px;
+    }
+    #form3{
+        left: 450px;
+    }
+    .step-row{
+        width: 360px;
+        height: 40px;
+        margin: 0 auto;
+        display: flex;
+        text-align: center;
+        box-shadow: 0 -1px 5px -1px #000;
+        position: relative;
+    }
+    .step-col{
+        width: 120px;
+        text-align: center;
+        display: flex;
+        position: relative;
+        color: #333;
+    }
+    .step-col:nth-child(1){
+        left: 70px;
+        top: 10px;
+    }
+    .step-col:nth-child(2){
+        left: 250px;
+        top: -7px;
+    }
+    #progress{
+        position: absolute;
+        height: 100%;
+        width: 180px;
+        transition: 1s;
+        background: linear-gradient(to right , #ff1 , #ffa);        
+    }
+    #progress::after{
+        content: '';
+        height: 0;
+        width: 0;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        position: absolute;
+        right: -20px;
+        top: 0;
+        border-left: 20px solid #ffa; 
+    }
+    #form3 button{
+        width: 110px;
+        height: 35px;
+        margin-top: 25px;
+        margin-left: 18px;
+        background: linear-gradient(to right , #ff105f , #ffab06);
+        border: 0;
+        border-radius: 30px;
+        outline: none;
+        color: #fff;
+        cursor: pointer;
+        text-align: center;
+    }
+    #form3 input{
+        width: 100%;
+        padding: 10px 5px;
+        margin: 5px 0;
+        border: 0;
+        border-bottom: 1px solid gold;
+        outline: none;
+        background: transparent;
+        transition: 1s;
+        color: gold;
+    }
+    .bar{
+        width: 12px;
+        height: 120px;
+        background: white;
+        display: inline-block;
+        transform-origin: bottom center;
+        animation: loading 1.5s ease-in-out infinite;
+    }
+    .bar1{animation-delay: 0.1s}
+    .bar2{animation-delay: 0.2s}
+    .bar3{animation-delay: 0.3s}
+    .bar4{animation-delay: 0.4s}
+    .bar5{animation-delay: 0.5s}
+    .bar6{animation-delay: 0.6s}
+    .bar7{animation-delay: 0.7s}
+    .bar8{animation-delay: 0.8s}
+    .midlle{
+
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        
+        transform: translate(-50%, -50%);
+    }
+      @keyframes loading{
+        0%{
+            transform: scaleY(0.1);
+            background: white;
+        }
+        50%{
+            transform: scaleY(1);
+            background: yellow;
+        }
+        100%{
+            transform: scaleY(0.1);
+            background: transparent;
+        }
+    }
+    </style>
+</head>
+<body id="body">
+    <div class="container">
+            <form id="form1">
+                <h3>??? ???</h3>
+                <input type="email" placeholder="email" required>
+                <input type="password" placeholder="password" required>
+                <input type="password" placeholder="password" required>
+                <div class="btn">
+                    <button id="next1">next</button>
+                </div>   
+            </form>
+            <form id="form2">
+                    <h3>????? ??? ???</h3>
+                    <input type="text"placeholder="name" required>
+                    <input type="text"placeholder="last name" required>
+                    <input type="tel" placeholder="phon number" required>
+                    <div class="btn">
+                            <button id="back1">Previous</button>
+                            <button id="next2" >finish</button>       
+                    </div> 
+            </form>
+                <div class="step-row">
+                    <div id="progress">
+                        <div class="step-col"><h4>????? ??</h4></div>
+                        <div class="step-col"><h4>????? ??</h4></div>                           
+                    </div>
+                 </div>
+    </div>
+    <div class="midlle">
+        <div class="bar bar1"></div>
+        <div class="bar bar2"></div>
+        <div class="bar bar3"></div>
+        <div class="bar bar4"></div>
+        <div class="bar bar5"></div>
+        <div class="bar bar6"></div>
+        <div class="bar bar7"></div>
+        <div class="bar bar8"></div>
+        <h3>Please Wait a while.</h3>
+    </div>
+    <script>
+    let form1 = document.querySelector('#form1')
+    let form2 = document.querySelector('#form2')
+
+    let toggle = document.querySelector('.toggle')
+
+    let next1 = document.querySelector('#next1')
+    let back1 = document.querySelector('#back1')
+    let next2 = document.querySelector('#next2')
+
+    let progress = document.querySelector('#progress')
+
+    let midlle = document.querySelector('.midlle')
+
+    let container = document.querySelector('.container')
+    eventListener()
+    function eventListener(){
+        next1.addEventListener('click' , nextForm1)
+        back1.addEventListener('click' , backForm1)
+        next2.addEventListener('click' , nextForm2)
+        checkbox.addEventListener('click', body)
+    }
+    function nextForm1(e){
+        e.preventDefault()
+        form1.style.left = '-450px' 
+        form2.style.left = '40px'
+        progress.style.width = '360px'
+    }
+    function backForm1(e){
+        e.preventDefault()
+        form1.style.left = '40px'
+        form2.style.left = '450px'
+        progress.style.width = '180px'
+    }
+    function nextForm2(e){
+        e.preventDefault()
+        midlle.style.display = 'block'
+        container.style.display = 'none'
+        body.style.background = 'rgba(0,0,0,0.5)'
+    }
+    </script>
+</body>
+</html>
